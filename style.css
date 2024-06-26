@@ -30,7 +30,7 @@ header {
     width: 100%;
     max-width: 1240px;
     margin: 0 auto;
-    padding: 50px 20px;
+    padding: 20px;
 }
 
 .ul {
@@ -38,7 +38,6 @@ header {
     gap: 25px;
     grid-template-columns: repeat(4, 1fr);
     justify-content: space-between;
-    /* border: 5px solid green;  */
 
 }
 
@@ -137,6 +136,8 @@ header {
     background-color: #082138;
     border: 1px solid #103456;
     margin-top: 30px;
+    color: #ffff;
+    text-transform: capitalize;
 }
 
 .section2 {
