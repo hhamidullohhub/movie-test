@@ -11,7 +11,8 @@ body {
     font-family: sans-serif;
 }
 
-ul,li {
+ul,
+li {
     list-style: none;
 }
 
@@ -22,18 +23,14 @@ a {
 
 header {
     background-color: #082138;
+    /* border: 1px solid; */
 }
 
 .container {
-    /* width: 100%; */
-    width: 1240px;
+    width: 100%;
+    max-width: 1240px;
     margin: 0 auto;
     padding: 50px 20px;
-}
-
-.link_uzmovi {
-    color: #ffff;
-    font-size: 35px;
 }
 
 .ul {
@@ -42,7 +39,7 @@ header {
     grid-template-columns: repeat(4, 1fr);
     justify-content: space-between;
     /* border: 5px solid green;  */
-    
+
 }
 
 .li {
@@ -63,17 +60,23 @@ header {
     padding-top: 20px;
 }
 
-.border {
-    border: 1px solid red;
-}
-
-.flex {
+.header_ul {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: 1px solid green;
 }
 
+.link_uzmovi {
+    font-size: 25px;
+    color: #ffff;
+}
 
-.textsize {
-    font-size: 20px;
+.header_links {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid red;
 }

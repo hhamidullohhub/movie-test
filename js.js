@@ -1,23 +1,8 @@
 const ul = document.querySelector('.ul')
 const header_ul = document.querySelector('.header_ul')
+const section1_ul = document.querySelector('section1_ul')
+const links_div = document.createElement('div')
 
-links.forEach((obj) => {
-    const site_link = document.createElement('h1')
-    const links_div = document.createElement('div')
-    const links_li = document.createElement('li')
-    const links_text = document.createElement('p')
-    links_text.textContent = obj.name
-    site_link.textContent = 'uzmovi.com'
-
-    links_li.append(links_text)
-    links_div.prepend(links_li)
-    header_ul.append(links_div)
-    links_div.classList.add('border')
-    header_ul.classList.add('flex')
-    links_text.classList.add('textsize')
-
-
-})
 
 
 
@@ -39,8 +24,4 @@ movies.forEach((movie) => {
 
     li.append(img, title, desc)
     ul.prepend(li)
-
-    li.addEventListener('click', () => {
-
-    });
 })

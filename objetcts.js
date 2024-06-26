@@ -85,11 +85,3 @@ const movies = [
     }
 
 ]
-
-
-const links = [
-    { name: 'bosh sahifa' },
-    { name: 'bosh sahifa' },
-    { name: 'bosh sahifa' },
-    { name: 'bosh sahifa' },
-]
