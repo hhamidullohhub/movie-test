@@ -65,7 +65,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid green;
+    /* border: 1px solid green; */
 }
 
 .link_uzmovi {
@@ -78,5 +78,67 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid red;
+    /* border: 1px solid red; */
+}
+
+.header_links a {
+    color: #fff;
+}
+
+.section1_ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.kirish_button {
+    background-color: #082138;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #103456;
+    border-radius: 5px;
+}
+
+.royhat_button {
+    background-color: #082138;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #103456;
+    border-radius: 5px;
+}
+
+.button1 {
+    background-color: #082138;
+    color: #a5bbdc  ;
+    padding: 10px;
+    border: 1px solid #103456;
+    border-radius: 5px;
+}
+
+.button2 {
+    background-color: #082138;
+    color: #a5bbdc  ;
+    padding: 10px;
+    border: 1px solid #103456;
+    border-radius: 5px;
+}
+
+.button3 {
+    background-color: #082138;
+    color: #a5bbdc  ;
+    padding: 10px 15px;
+    border: 1px solid #103456;
+    border-radius: 5px; 
+}
+
+.search_input {
+    width: 100%;
+    padding: 10px;
+    background-color: #082138;
+    border: 1px solid #103456;
+    margin-top: 30px;
+}
+
+.section2 {
+    background-color: #082138
 }
