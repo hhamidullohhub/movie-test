@@ -1,86 +1,103 @@
+
+
+
 const movies = [
     {
         img: "img/deadpool.jpg",
         title: 'Deadpool',
         year: 2024,
-        desc: 'yoqud ijodkor 1999-yil xorazm viloyatida tavallud topadi keyin u xorlangan moykachi bolib qoladi'
+        desc: 'yoqud ijodkor 1999-yil xorazm viloyatida tavallud topadi keyin u xorlangan moykachi bolib qoladi',
+        country: 'angliya',
+
 
     },
     {
         img: "img/black panther.jpg",
         title: 'Black panther 2',
         year: 2024,
-        desc: 'yoqud ijodkor 1999-yil xorazm viloyatida tavallud topadi keyin u xorlangan moykachi bolib qoladi'
+        desc: 'yoqud ijodkor 1999-yil xorazm viloyatida tavallud topadi keyin u xorlangan moykachi bolib qoladi',
+        country: 'xitoy',
+
 
     },
     {
         img: "img/farsaj.jpg",
         title: 'Farsaj 8',
         year: 2024,
-        desc: 'yoqud ijodkor 1999-yil xorazm viloyatida tavallud topadi keyin u xorlangan moykachi bolib qoladi'
-
+        desc: 'yoqud ijodkor 1999-yil xorazm viloyatida tavallud topadi keyin u xorlangan moykachi bolib qoladi',
+        janr: "Tarjima kinolar|Jangar|Serial",
+        country: 'Aqsh',
     },
     {
-        img: "img/spiderman.jpeg",
+        img: "img/transformers.webp",
         title: 'Spiderman',
         year: 2024,
-        desc: 'yoqud ijodkor 1999-yil xorazm viloyatida tavallud topadi keyin u xorlangan moykachi bolib qoladi'
+        desc: 'Avtarobotlar xaqida',
+        country: 'xind',
 
     },
     {
-        img: "https://darakchi.uz/storage/86/08/8e/93727/conversions/27337866_PopjLd8_Hn4ql2yut7GzFOizVrZHw18kq5tARK-vbhI-xl.jpg",
+        img: 'img/need.webp',
         title: 'xorlangan moykachi',
         year: 2024,
-        desc: 'yoqud ijodkor 1999-yil xorazm viloyatida tavallud topadi keyin u xorlangan moykachi bolib qoladi'
+        desc: 'Need for spped tezlik xaqidagi kino',
+        country: 'Rossiya',
 
     },
     {
-        img: "https://darakchi.uz/storage/86/08/8e/93727/conversions/27337866_PopjLd8_Hn4ql2yut7GzFOizVrZHw18kq5tARK-vbhI-xl.jpg",
+        img: 'img/chumoliodam.jpg',
         title: 'xorlangan moykachi',
         year: 2024,
-        desc: 'yoqud ijodkor 1999-yil xorazm viloyatida tavallud topadi keyin u xorlangan moykachi bolib qoladi'
+        desc: 'Chumoli odam',
+        country: 'Uzbekistan',
 
     },
     {
-        img: "https://darakchi.uz/storage/86/08/8e/93727/conversions/27337866_PopjLd8_Hn4ql2yut7GzFOizVrZHw18kq5tARK-vbhI-xl.jpg",
+        img: 'img/avatar.jpg',
         title: 'xorlangan moykachi',
         year: 2024,
-        desc: 'yoqud ijodkor 1999-yil xorazm viloyatida tavallud topadi keyin u xorlangan moykachi bolib qoladi'
+        desc: 'kino detskicha umuman g\alati ishlangan',
+        country: 'turkey',
 
     },
     {
-        img: "https://darakchi.uz/storage/86/08/8e/93727/conversions/27337866_PopjLd8_Hn4ql2yut7GzFOizVrZHw18kq5tARK-vbhI-xl.jpg",
+        img: 'img/farsaj.jpg',
         title: 'xorlangan moykachi',
         year: 2024,
-        desc: 'yoqud ijodkor 1999-yil xorazm viloyatida tavallud topadi keyin u xorlangan moykachi bolib qoladi'
+        desc: 'Poyga va tez yurar mashinalar xaqida',
+        country: 'germany',
 
     },
     {
-        img: "https://darakchi.uz/storage/86/08/8e/93727/conversions/27337866_PopjLd8_Hn4ql2yut7GzFOizVrZHw18kq5tARK-vbhI-xl.jpg",
+        img: 'img/deadpool.jpg',
         title: 'xorlangan moykachi',
         year: 2024,
-        desc: 'yoqud ijodkor 1999-yil xorazm viloyatida tavallud topadi keyin u xorlangan moykachi bolib qoladi'
+        desc: 'Qonli sahnalar bo\'lishi mumkun 16 yoshdan kichiklarga tavsiya qilinmaydi',
+        country: 'xind',
 
     },
     {
-        img: "https://darakchi.uz/storage/86/08/8e/93727/conversions/27337866_PopjLd8_Hn4ql2yut7GzFOizVrZHw18kq5tARK-vbhI-xl.jpg",
+        img: 'img/spiderman.jpeg',
         title: 'xorlangan moykachi',
         year: 2024,
-        desc: 'yoqud ijodkor 1999-yil xorazm viloyatida tavallud topadi keyin u xorlangan moykachi bolib qoladi'
+        desc: 'O\'rgimchak odam yaxshi bola',
+        country: 'xind',
 
     },
     {
-        img: "https://darakchi.uz/storage/86/08/8e/93727/conversions/27337866_PopjLd8_Hn4ql2yut7GzFOizVrZHw18kq5tARK-vbhI-xl.jpg",
+        img: 'img/black panther.jpg',
         title: 'xorlangan moykachi',
         year: 2024,
-        desc: 'yoqud ijodkor 1999-yil xorazm viloyatida tavallud topadi keyin u xorlangan moykachi bolib qoladi'
+        desc: 'Qora pantera',
+        country: 'xind',
 
     },
     {
-        img: "https://darakchi.uz/storage/86/08/8e/93727/conversions/27337866_PopjLd8_Hn4ql2yut7GzFOizVrZHw18kq5tARK-vbhI-xl.jpg",
+        img: "img/img qasoskorla.jpg",
         title: 'xorlangan moykachi',
         year: 2024,
-        desc: 'yoqud ijodkor 1999-yil xorazm viloyatida tavallud topadi keyin u xorlangan moykachi bolib qoladi'
+        desc: 'Qonli sahnalar bo\'lishi mumkun 16 yoshdan kichiklarga tavsiya qilinmaydi',
+        country: 'xind',
 
     }
 

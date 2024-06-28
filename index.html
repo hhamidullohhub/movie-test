@@ -26,12 +26,65 @@
                 <a href="./index.html" class="link_uzmovi">uzmovi.com</a>
 
                 <div class="header_links">
-                    <a href="./index.html">Bosh sahifa</a>
-                    <a href="./kinolar.html">kinolar</a>
+                    <a href="./index.html" class="hometext">Bosh sahifa</a>
+                    <div class="dropdown ">
+                        <button class="kinolar btn btn-secondary dropdown-toggle" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Kinolar
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Tarjima kinolar</a></li>
+                            <li><a class="dropdown-item" href="#">Premyera</a></li>
+                            <li><a class="dropdown-item" href="#">Hind kinolari</a></li>
+                            <li><a class="dropdown-item" href="#">Multfilm </a></li>
+                            <li><a class="dropdown-item" href="#">Kino yangiliklari</a></li>
+                        </ul>
+                    </div>
                     <a href="">seriallar</a>
-                    <a href="">janr</a>
-                    <a href="">yil</a>
-                    <a href="">mamlakat</a>
+                    <div class="dropdown ">
+                        <button class="kinolar btn btn-secondary dropdown-toggle" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            janr
+                        </button>
+                        <ul class="dropdown-menu" id="dropdown">
+                            <li><a class="dropdown-item" href="#" id="jangari">Jangari</a></li>
+                            <li><a class="dropdown-item" href="#">Dramma</a></li>
+                            <li><a class="dropdown-item" href="#">Komediya</a></li>
+                            <li><a class="dropdown-item" href="#">Melodramma</a></li>
+                            <li><a class="dropdown-item" href="#">Sarguzasht</a></li>
+                            <li><a class="dropdown-item" href="#">Qorqinchili</a></li>
+                            <li><a class="dropdown-item" href="#">Tarixiy</a></li>
+                            <li><a class="dropdown-item" href="#">Klassika</a></li>
+                            <li><a class="dropdown-item" href="#">Fantastika</a></li>
+                            <li><a class="dropdown-item" href="#">Hayotiy</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown ">
+                        <button class="kinolar btn btn-secondary dropdown-toggle" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Yil
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">2021</a></li>
+                            <li><a class="dropdown-item" href="#">2022</a></li>
+                            <li><a class="dropdown-item" href="#"> 2023</a></li>
+                            <li><a class="dropdown-item" href="#">2024 </a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown ">
+                        <button class="kinolar btn btn-secondary dropdown-toggle" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Mamlakat
+                        </button>
+                        <ul class="dropdown-menu" id="country">
+                            <li><a class="dropdown-item" href="#">Rossiya</a></li>
+                            <li><a class="dropdown-item" href="#">Aqsh</a></li>
+                            <li><a class="dropdown-item" href="#">Turkiya</a></li>
+                            <li><a class="dropdown-item" href="#">Xitoy </a></li>
+                            <li><a class="dropdown-item" href="#">Hindiston</a></li>
+                            <li><a class="dropdown-item" href="#">Avstraliya</a></li>
+                        </ul>
+                    </div>
                     <a href="">kino yangililari</a>
                 </div>
             </ul>
@@ -42,8 +95,70 @@
         <div class="container">
             <ul class="section1_ul">
                 <li>
-                    <button class="kirish_button">Kirish</button>
-                    <button class="royhat_button">Ro'yhatdan o'tish</button>
+                    <!-- <button class="kirish_button">Kirish</button> -->
+
+                    <!-- Kirish tugmasi -->
+                    <button class="kirish_button" data-bs-toggle="modal" data-bs-target="#loginModal">Kirish</button>
+
+                    <!-- Kirish modali -->
+                    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="loginModalLabel">Kirish</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="loginForm">
+                                        <div class="mb-3">
+                                            <label for="loginEmail" class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="loginEmail" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="loginPassword" class="form-label">Parol</label>
+                                            <input type="password" class="form-control" id="loginPassword" required>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Kirish</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <button class="royhat_button">Ro'yhatdan o'tish</button> -->
+
+                    <button class="royhat_button" data-bs-toggle="modal" data-bs-target="#registrationModal">Ro'yhatdan
+                        o'tish</button>
+
+                    <!-- Ro'yhatdan o'tish modali -->
+                    <div class="modal fade" id="registrationModal" tabindex="-1"
+                        aria-labelledby="registrationModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="registrationModalLabel">Ro'yhatdan o'tish</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="registrationForm">
+                                        <div class="mb-3">
+                                            <label for="username" class="form-label">Foydalanuvchi nomi</label>
+                                            <input type="text" class="form-control" id="username" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="email" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="password" class="form-label">Parol</label>
+                                            <input type="password" class="form-control" id="password" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="confirmPassword" class="form-label">Parolni tasdiqlang</label>
+
                 </li>
                 <li>
                     <button class="button1">
@@ -64,6 +179,7 @@
 
     <section class="section2">
         <div class="container">
+            <h4 class="section2_text">PREMYERALAR</h4>
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -96,6 +212,33 @@
                                 alt="...">
                         </a>
                     </div>
+
+                    <div class="carousel-item">
+                        <a href="https://uzmovi.com/tarjima-kinolarri/904-chumoli-odam.html">
+                            <img src="./img/chumoliodam.jpg" class="d-block" style="width: 100%; height: 675px;"
+                                alt="...">
+                        </a>
+                    </div>
+
+                    <div class="carousel-item">
+                        <a href="https://uzmovi.com/tarjima-kinolarri/1147-avatar.html">
+                            <img src="./img/avatar.jpg" class="d-block" style="width: 100%; height: 675px;" alt="...">
+                        </a>
+                    </div>
+
+                    <div class="carousel-item">
+                        <a
+                            href="https://uzmovi.com/tarjima-kinolarri/5482-transformerlar-7-maxluqlar-yuksalishi-botlar-galabasi-premyera-uzbek-ozbek-tilida.html">
+                            <img src="./img/transformers.webp" class="d-block" style="width: 100%; height: 675px;"
+                                alt="...">
+                        </a>
+                    </div>
+
+                    <div class="carousel-item">
+                        <a href="https://uzmovi.com/tarjima-kinolarri/1034-tezlik-zavqi-need-for-speed.html">
+                            <img src="./img/need.webp" class="d-block" style="width: 100%; height: 675px;" alt="...">
+                        </a>
+                    </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
                     data-bs-slide="prev">
@@ -113,12 +256,142 @@
 
     <section class="section3">
         <div class="container">
-            <ul class="ul" id="ul">
+            <div class="" style="display: flex;">
+                <ul class="ul" id="ul"></ul>
 
-            </ul>
+                <ul>
+                    <div class="icons">
+                        <a href="https://t.me/Uzmovi3">
+                            <i class="fa-brands fa-telegram"
+                                style="background-color: rgba(42, 171, 238, 0.7); color: #fff;"></i>
+                        </a>
+                        <a href="https://www.youtube.com/results?search_query=uzmovi.com">
+                            <i class="fa-brands fa-youtube"
+                                style="background-color: rgba(241, 37, 103, 0.7); color: #fff;"></i>
+                        </a>
+                        <i class="fa-brands fa-tiktok" style="background-color: black; color: #fff;"></i>
+                        <a href="https://www.instagram.com/uzmovi_com/">
+                            <i class="fa-brands fa-instagram"
+                                style="background-color: rgba(193, 53, 132, 0.7); color: #fff;"></i>
+                        </a>
+                    </div>
+
+                    <li class="tasodifiyLi">
+                        <p>Tasodifiy filmlar</p>
+                        <img src="./img/qasoskor.jpg" alt="">
+                    </li>
+
+                    <div class="yuqori_reyting">
+                        <div class="text_reyting">
+                            <p>YUQORI REYTINGDA</p>
+                            <i class="fa-solid fa-circle-minus"></i>
+                        </div>
+
+                        <li class="reyting-li">
+                            <img src="./img/apple.jpg" alt="">
+                            <div class="yuqori-desc">
+                                <p>Lorem ipsum dolor sit amet </p>
+                                <a href="">tarjima kinolar</a>
+                        
+                                <div class="likeButton">
+                                    <i class="fa-solid fa-thumbs-up like-icon"></i>
+                                    <span class="like-count">0</span> <!-- Like soni -->
+                                    <i class="fa-solid fa-thumbs-down dislike-icon"></i>
+                                    <span class="dislike-count">0</span> <!-- Dislike soni -->
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="reyting-li">
+                            <img src="./img/apple.jpg" alt="">
+                            <div class="yuqori-desc">
+                                <p>Lorem ipsum dolor sit amet </p>
+                                <a href="">tarjima kinolar</a>
+                        
+                                <div class="likeButton">
+                                    <i class="fa-solid fa-thumbs-up like-icon"></i>
+                                    <span class="like-count">0</span> <!-- Like soni -->
+                                    <i class="fa-solid fa-thumbs-down dislike-icon"></i>
+                                    <span class="dislike-count">0</span> <!-- Dislike soni -->
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="reyting-li">
+                            <img src="./img/apple.jpg" alt="">
+                            <div class="yuqori-desc">
+                                <p>Lorem ipsum dolor sit amet </p>
+                                <a href="">tarjima kinolar</a>
+                        
+                                <div class="likeButton">
+                                    <i class="fa-solid fa-thumbs-up like-icon"></i>
+                                    <span class="like-count">0</span> <!-- Like soni -->
+                                    <i class="fa-solid fa-thumbs-down dislike-icon"></i>
+                                    <span class="dislike-count">0</span> <!-- Dislike soni -->
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="reyting-li">
+                            <img src="./img/apple.jpg" alt="">
+                            <div class="yuqori-desc">
+                                <p>Lorem ipsum dolor sit amet </p>
+                                <a href="">tarjima kinolar</a>
+                        
+                                <div class="likeButton">
+                                    <i class="fa-solid fa-thumbs-up like-icon"></i>
+                                    <span class="like-count">0</span> <!-- Like soni -->
+                                    <i class="fa-solid fa-thumbs-down dislike-icon"></i>
+                                    <span class="dislike-count">0</span> <!-- Dislike soni -->
+                                </div>
+                            </div>
+                        </li>
+                        
+                    </div>
+
+                    <div class="">
+                        <p>TEGLAR BULUTI</p>
+
+                        <div class="teglar-links">
+                            <a href="#">qamoqxonasidan</a>
+                            <a href="#">Barcha</a>
+                            <a href="#">Alvlito</a>
+                        </div>
+                    </div>
+
+                </ul>
+            </div>
         </div>
     </section>
 
+
+    <section class="section4">
+        <div class="container">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
 
     <script src="./objetcts.js"></script>
     <script src="./js.js"></script>
