@@ -38,8 +38,7 @@ movies.forEach((movie) => {
 
 year15.addEventListener('click', () => {
     const filter15 = movies.filter(movie => movie.year == 2015)
-    movies.push(filter15)
-    movies=[...filter15]
+    movies =[...filter15]
     // console.log(...filter15)
 })
 
@@ -49,6 +48,37 @@ year16.addEventListener('click', () => {
     movies.push(filter16)
 })
 
+year17.addEventListener('click', () => {
+    const filteredMovies = movies.filter(movie => movie.year == 2017)
+})
+
+year18.addEventListener('click', () => {
+    const filteredMovies = movies.filter(movie => movie.year == 2018)
+})
+
+year19.addEventListener('click', () => {
+    const filteredMovies = movies.filter(movie => movie.year == 2019)
+})
+
+year20.addEventListener('click', () => {
+    const filteredMovies = movies.filter(movie => movie.year == 2020)
+})
+
+year21.addEventListener('click', () => {
+    const filteredMovies = movies.filter(movie => movie.year == 2021)
+})
+
+year22.addEventListener('click', () => {
+    const filteredMovies = movies.filter(movie => movie.year == 2022)
+})
+
+year23.addEventListener('click', () => {
+    const filteredMovies = movies.filter(movie => movie.year == 2023)
+})
+
+year24.addEventListener('click', () => {
+    const filteredMovies = movies.filter(movie => movie.year == 2024)
+})
 
 
 
