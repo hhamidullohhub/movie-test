@@ -3,7 +3,16 @@ const header_ul = document.querySelector('.header_ul')
 const section1_ul = document.querySelector('section1_ul')
 const links_div = document.createElement('div')
 const country = document.getElementById('country')
+const year15 = document.getElementById('year15')
+const year16 = document.getElementById('year16')
+const year17 = document.getElementById('year17')
+const year18 = document.getElementById('year18')
+const year19 = document.getElementById('year19')
+const year20 = document.getElementById('year20')
 const year21 = document.getElementById('year21')
+const year22 = document.getElementById('year22')
+const year23 = document.getElementById('year23')
+const year24 = document.getElementById('year24')
 
 
 movies.forEach((movie) => {
@@ -27,13 +36,17 @@ movies.forEach((movie) => {
     ul.append(li)
 })
 
-year21.addEventListener('click', () => {
-    const filterMovie = movies.filter((movie) => {
-        return movie.year == 2021
-    })
+year15.addEventListener('click', () => {
+    const filter15 = movies.filter(movie => movie.year == 2015)
+    movies.push(filter15)
+    movies=[...filter15]
+    // console.log(...filter15)
+})
 
-    movies.push(filterMovie)
-    console.log(filterMovie);
+year16.addEventListener('click', () => {
+    const filter16 = movies.filter(movie => movie.year == 2016)
+    console.log(filter16);
+    movies.push(filter16)
 })
 
 
