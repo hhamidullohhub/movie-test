@@ -23,7 +23,7 @@ const movies = [
     {
         img: "img/farsaj.jpg",
         title: 'Farsaj 8',
-        year: 2018,
+        year: 2021,
         desc: 'yoqud ijodkor 1999-yil xorazm viloyatida tavallud topadi keyin u xorlangan moykachi bolib qoladi',
         janr: "Tarjima kinolar|Jangar|Serial",
         country: 'Aqsh',

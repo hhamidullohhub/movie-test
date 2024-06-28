@@ -3,16 +3,8 @@ const header_ul = document.querySelector('.header_ul')
 const section1_ul = document.querySelector('section1_ul')
 const links_div = document.createElement('div')
 const country = document.getElementById('country')
-const year15 = document.getElementById('year15')
-const year16 = document.getElementById('year16')
-const year17 = document.getElementById('year17')
-const year18 = document.getElementById('year18')
-const year19 = document.getElementById('year19')
-const year20 = document.getElementById('year20')
-const year21 = document.getElementById('year21')
-const year22 = document.getElementById('year22')
-const year23 = document.getElementById('year23')
-const year24 = document.getElementById('year24')
+// const years = document.querySelectorAll('#years')
+// console.log(years)
 
 
 movies.forEach((movie) => {
@@ -36,49 +28,21 @@ movies.forEach((movie) => {
     ul.append(li)
 })
 
-year15.addEventListener('click', () => {
-    const filter15 = movies.filter(movie => movie.year == 2015)
-    movies =[...filter15]
-    // console.log(...filter15)
-})
 
-year16.addEventListener('click', () => {
-    const filter16 = movies.filter(movie => movie.year == 2016)
-    console.log(filter16);
-    movies.push(filter16)
-})
+const years = document.querySelectorAll('#year .years');
 
-year17.addEventListener('click', () => {
-    const filteredMovies = movies.filter(movie => movie.year == 2017)
-})
+years.forEach(year => {
+    console.log(year);
+    
+    year.addEventListener('click', () => {
+        const yearValue = parseInt(year.textContent); // Berilgan yil qiymatini olamiz
+        const filteredMovies = movies.filter(movie => movie.year === yearValue);
+        console.log(filteredMovies);
+    });
+});
 
-year18.addEventListener('click', () => {
-    const filteredMovies = movies.filter(movie => movie.year == 2018)
-})
 
-year19.addEventListener('click', () => {
-    const filteredMovies = movies.filter(movie => movie.year == 2019)
-})
 
-year20.addEventListener('click', () => {
-    const filteredMovies = movies.filter(movie => movie.year == 2020)
-})
-
-year21.addEventListener('click', () => {
-    const filteredMovies = movies.filter(movie => movie.year == 2021)
-})
-
-year22.addEventListener('click', () => {
-    const filteredMovies = movies.filter(movie => movie.year == 2022)
-})
-
-year23.addEventListener('click', () => {
-    const filteredMovies = movies.filter(movie => movie.year == 2023)
-})
-
-year24.addEventListener('click', () => {
-    const filteredMovies = movies.filter(movie => movie.year == 2024)
-})
 
 
 
