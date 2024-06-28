@@ -3,7 +3,7 @@ const header_ul = document.querySelector('.header_ul')
 const section1_ul = document.querySelector('section1_ul')
 const links_div = document.createElement('div')
 const country = document.getElementById('country')
-
+const year21 = document.getElementById('year21')
 
 
 movies.forEach((movie) => {
@@ -27,7 +27,14 @@ movies.forEach((movie) => {
     ul.append(li)
 })
 
+year21.addEventListener('click', () => {
+    const filterMovie = movies.filter((movie) => {
+        return movie.year == 2021
+    })
 
+    movies.push(filterMovie)
+    console.log(filterMovie);
+})
 
 
 
