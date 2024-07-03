@@ -37,16 +37,16 @@
 // }
 
 
-// movies.forEach((movie) => {
-//     renderList(movies)
-// })
+// renderList(movies)  
+
 
 // li_a.forEach(a => {
 //     a.addEventListener('click', () => {
 //         ul.innerHTML = null;
 //         const yearValue = parseInt(a.textContent)
 //         const filteredMovies = movies.filter(movie => movie.year === yearValue);
-//         renderList(filteredMovies)
+//         console.log(a);
+
 //     })
 // })
 
@@ -67,27 +67,49 @@
 
 
 
-// const movie_ul = document.getElementById('ul')
-// const ul_years = document.getElementById('ul_years')
-// const js_year = document.querySelectorAll('.js_year')
-// const movie_year = []
+const movie_ul = document.getElementById('ul')
+const onePage = document.querySelectorAll('.page-link')
+const movie_year = []
+
+const sliceMovies = movies.slice(0, 8)
+const sliceMovies2 = movies.slice(8, 16)
+
+function renderList(callback) {
+    callback.forEach(movie => {
+        const li = document.createElement('li')
+        const img = document.createElement('img')
+        const title = document.createElement('h3')
+        const desc = document.createElement('p')
+
+        img.src = movie.img
+        title.textContent = movie.title
+        desc.textContent = movie.desc
+        li.append(img, title, desc)
+
+        li.classList.add('li')
+        img.classList.add('imgCover')
+        movie_ul.prepend(li)
+    })
+}
+
+renderList(sliceMovies)
 
 
-// movies.forEach(movie => {
-//     const li = document.createElement('li')
-//     const img = document.createElement('img')
-//     const title = document.createElement('h3')
-//     const desc = document.createElement('p')
 
-//     img.src = movie.img
-//     title.textContent = movie.title
-//     desc.textContent = movie.desc
-//     li.append(img, title, desc)
 
-//     li.classList.add('li')
-//     img.classList.add('imgCover')
-//     movie_ul.prepend(li)
-// })
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // movies.forEach(movie => {
 //     movie_year.push(movie.year)
@@ -101,12 +123,16 @@
 //     a.textContent = year;
 //     a.setAttribute('href', '#')
 //     a.classList.add('js_year')
+
 //     a.setAttribute('onclick', `edityear(${year})`)
 //     li.append(a)
 //     ul_years.prepend(li)
 // })
 
-// js_year.forEach(year => {
+// const years = document.querySelectorAll('.js_year')
+// console.log(years);
+
+// years.forEach(year => {
 //     year.addEventListener('click', () => {
 //         movie_ul.innerHTML = null
 
@@ -132,66 +158,6 @@
 //         })
 //     })
 // })
-
-
-// function edityear(year) {
-//     const yearValue = parseInt(year.textContent)
-    
-// }
-
-
-
-const movie_ul = document.getElementById('ul')
-const ul_years = document.getElementById('ul_years')
-const movie_year = []
-
-function appendMovieElement(movie, container) {
-    const li = document.createElement('li')
-    const img = document.createElement('img')
-    const title = document.createElement('h3')
-    const desc = document.createElement('p')
-
-    img.src = movie.img
-    title.textContent = movie.title
-    desc.textContent = movie.desc
-    li.append(img, title, desc)
-
-    li.classList.add('li')
-    img.classList.add('imgCover')
-    container.prepend(li)
-}
-
-
-function appendYearElement(year) {
-    const li = document.createElement('li')
-    const a = document.createElement('a')
-    a.textContent = year;
-    a.setAttribute('href', '#')
-    a.classList.add('js_year')
-    a.setAttribute('onclick', `edityear(${year})`)
-    li.append(a)
-    ul_years.prepend(li)
-}
-
-
-movies.forEach(movie => {
-    appendMovieElement(movie)
-})
-
-const uniqueSortedYears = [...new Set(movies.map(movie => movie.year))].sort((a, b) => b - a)
-uniqueSortedYears.forEach(year => {
-    appendYearElement(year, ul_years)
-})
-
-function edityear(year) {
-    movie_ul.innerHTML = null;
-
-    const filteredMovies = movies.filter(movie => movie.year === year) 
-    filteredMovies.forEach(movie => {
-        appendMovieElement(movie, movie_ul) 
-    })
-}
-
 
 
 
