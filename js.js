@@ -68,11 +68,24 @@
 
 
 const movie_ul = document.getElementById('ul')
-const onePage = document.querySelectorAll('.page-link')
+const onePage = document.querySelectorAll('.link1')
+const twooPage = document.querySelectorAll('.link2')
+const treePage = document.querySelectorAll('.link3')
+const navbar_years = document.getElementById('navbar_years')
 const movie_year = []
 
 const sliceMovies = movies.slice(0, 8)
-const sliceMovies2 = movies.slice(8, 16)
+const sliceMovies1 = movies.slice(8, 16)
+const sliceMovies2 = movies.slice(16, 24)
+const sliceMovies3 = movies.slice(24)
+
+movies.forEach(movie => {
+    movie_year.push(movie.year)
+})
+const sortMovie = [...new Set(movie_year)].sort((a, b) => a - b);
+
+
+
 
 function renderList(callback) {
     callback.forEach(movie => {
@@ -95,8 +108,28 @@ function renderList(callback) {
 renderList(sliceMovies)
 
 
+onePage.forEach(page => {
+    page.addEventListener('click', () => {
+        console.log(page);
+        movie_ul.innerHTML = null
+        renderList(sliceMovies1)
+    })
+})
+
+twooPage.forEach(page => {
+    page.addEventListener('click', () => {
+        movie_ul.innerHTML = null
+        renderList(sliceMovies2)
+    })
+})
 
 
+treePage.forEach(page => {
+    page.addEventListener('click', () => {
+        movie_ul.innerHTML = null
+        renderList(sliceMovies3)
+    })
+})
 
 
 

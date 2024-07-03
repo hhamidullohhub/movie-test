@@ -196,7 +196,31 @@ const movies = [
         desc: 'Qora pantera',
         country: 'xind',
 
-    }
+    },
+    {
+        img: 'img/black panther.jpg',
+        title: 'xorlangan moykachi',
+        year: 2024,
+        desc: 'Qora pantera',
+        country: 'xind',
+
+    },
+    {
+        img: 'img/farsaj.jpg',
+        title: 'xorlangan moykachi',
+        year: 2020,
+        desc: 'Poyga va tez yurar mashinalar xaqida',
+        country: 'germany',
+
+    },
+    {
+        img: "img/img qasoskorla.jpg",
+        title: 'xorlangan moykachi',
+        year: 2022,
+        desc: 'Qonli sahnalar bo\'lishi mumkun 16 yoshdan kichiklarga tavsiya qilinmaydi',
+        country: 'xind',
+
+    },
 
 ]
 
