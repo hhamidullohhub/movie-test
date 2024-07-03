@@ -82,8 +82,29 @@ const sliceMovies3 = movies.slice(24)
 movies.forEach(movie => {
     movie_year.push(movie.year)
 })
-const sortMovie = [...new Set(movie_year)].sort((a, b) => a - b);
+const sortMovie = [...new Set(movie_year)].sort((a, b) => b - a);
 
+renderYear(sortMovie)
+
+function renderYear(year) {
+    year.forEach(year => {
+        const li = document.createElement('li')
+        console.log(li);
+        const a = document.createElement('a')
+        a.setAttribute('href', '#')
+        a.classList.add('js_year')
+        a.textContent = year
+
+        a.addEventListener('click', () => {
+            movie_ul.innerHTML = null
+            const filteredMovies = movies.filter(movie => movie.year === year)
+            renderList(filteredMovies)
+        })
+
+        li.append(a)
+        navbar_years.prepend(li)
+    })
+}
 
 
 
