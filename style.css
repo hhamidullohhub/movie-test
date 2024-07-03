@@ -48,7 +48,7 @@ header {
 .li {
     width: 100%;
     max-width: 250px;
-    height: auto;
+    height: 430px;
     /* height: 341px; */
     text-align: center;
     margin-top: 20px;
@@ -63,7 +63,6 @@ header {
     width: 100%;
     height: 275px;
     object-fit: cover;
-    /* object-fit: contain,cover; */
 }
 
 .h3 {
@@ -348,4 +347,13 @@ header {
 
 .reyting-li a {
     margin-top: -12px;
+}
+
+.ul_years {
+    /* border: 1px solid red; */
+}
+
+.js_year{
+    padding: 5px 10px;
+    /* border: 1px solid red; */
 }
