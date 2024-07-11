@@ -1,72 +1,3 @@
-// const ul = document.querySelector('.ul')
-// const li_a = document.querySelectorAll('.years')
-// const ul_years = document.getElementById('ul_years')
-// const movie_year = []
-
-
-// movies.forEach(movie => {
-//     movie_year.push(movie.year)
-// })
-// movie_year.forEach(year => {
-//     const li = document.createElement('li')
-//     li.textContent = year
-//     ul_years.append(li)
-// })
-
-// function renderList(a) {
-//     a.forEach((movie) => {
-//         const li = document.createElement('li')
-//         const img = document.createElement('img')
-//         const title = document.createElement('h3')
-//         const desc = document.createElement('p')
-
-
-//         img.src = movie.img
-//         img.setAttribute('width', 'auto')
-//         img.setAttribute('height', '275px')
-//         img.classList.add('imgCover')
-//         title.textContent = movie.title
-//         desc.textContent = movie.desc
-//         li.classList.add('li')
-//         title.classList.add('h3')
-//         desc.classList.add('p')
-
-//         li.append(img, title, desc)
-//         ul.append(li)
-//     })
-// }
-
-
-// renderList(movies)  
-
-
-// li_a.forEach(a => {
-//     a.addEventListener('click', () => {
-//         ul.innerHTML = null;
-//         const yearValue = parseInt(a.textContent)
-//         const filteredMovies = movies.filter(movie => movie.year === yearValue);
-//         console.log(a);
-
-//     })
-// })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // const movie_ul = document.getElementById('ul')
 // const onePage = document.querySelectorAll('.link1')
 // const twooPage = document.querySelectorAll('.link2')
@@ -75,10 +6,8 @@
 // const paginations = document.getElementById('pagination')
 // const movie_year = []
 
-// const sliceMovies = movies.slice(0, 8)
-// const sliceMovies1 = movies.slice(8, 16)
-// const sliceMovies2 = movies.slice(16, 24)
-// const sliceMovies3 = movies.slice(24)
+
+
 
 // movies.forEach(movie => {
 //     movie_year.push(movie.year)
@@ -90,12 +19,12 @@
 // function renderYear(year) {
 //     year.forEach(year => {
 //         const li = document.createElement('li')
-//         console.log(li);
 //         const a = document.createElement('a')
 //         a.setAttribute('href', '#')
 //         a.classList.add('js_year')
 //         a.textContent = year
 //         a.dataset.year = year
+//         console.log(a);
 //         li.setAttribute("class", "salom salom1")
 //         a.addEventListener('click', () => {
 //             movie_ul.innerHTML = null
@@ -131,6 +60,16 @@
 // renderList(sliceMovies)
 
 
+
+
+
+
+
+
+
+
+
+
 // onePage.forEach(page => {
 //     page.addEventListener('click', () => {
 //         console.log(page);
@@ -159,20 +98,67 @@
 
 
 
+
+
+
+///////===========================================/////////
+
+
+
+
+
+
+
+
+
+
+
+const searchinput = document.getElementById('searchinput')
 const movie_ul = document.getElementById('ul');
 const navbar_years = document.getElementById('navbar_years');
 const paginations = document.getElementById('pagination');
+const kinoTur = document.getElementById("kinoTur")
+const countryHtml = document.getElementById('country')
 const movie_year = [];
+const turlar = []
+const country = []
+
+
+searchinput.addEventListener('input', () => {
+    const query = searchinput.value.toLowerCase();
+    searchResult.textContent = query ? `Qidiruv natijalari: "${query}"` : '';
+    const filteredMovies = movies.filter(movie => {
+        const title = movie.title.toLowerCase();
+        const desc = movie.desc.toLowerCase();
+        return title.includes(query) || desc.includes(query);
+    });
+    renderList(filteredMovies);
+});
+
+
+
 
 movies.forEach(movie => {
     movie_year.push(movie.year);
+    turlar.push(movie.turi)
+    country.push(movie.country)
 });
 
+
+const countrySort = [...new Set(country)].sort((a, b) => b - a);
+const sorttur = [...new Set(turlar)].sort((a, b) => b - a);
 const sortMovie = [...new Set(movie_year)].sort((a, b) => b - a);
+
+
+
+
+
 
 renderYear(sortMovie);
 renderPaginationButtons();
+renderTypes(sorttur)
 renderList(sliceMovies(0));
+renderCountry(countrySort)
 
 function renderYear(years) {
     years.forEach(year => {
@@ -184,7 +170,7 @@ function renderYear(years) {
         a.dataset.year = year;
         li.setAttribute('class', 'salom salom1');
         a.addEventListener('click', () => {
-            movie_ul.innerHTML = null;
+            // movie_ul.innerHTML = null;
             const filteredMovies = movies.filter(movie => movie.year === year);
             renderList(filteredMovies);
         });
@@ -193,6 +179,51 @@ function renderYear(years) {
         navbar_years.prepend(li);
     });
 }
+
+function renderTypes(types) {
+    types.forEach(type => {
+        const li = document.createElement('li')
+        const a = document.createElement('a')
+        a.classList.add('js_year')
+        a.setAttribute('href', '#')
+        a.textContent = type
+        a.dataset.type = type
+        li.classList.add('class', 'salom');
+        a.addEventListener('click', () => {
+            // movie_ul.innerHTML = null
+            const filteredMovies = movies.filter(movie => movie.turi === type)
+            renderList(filteredMovies)
+        })
+
+        li.append(a)
+        kinoTur.prepend(li)
+
+    })
+}
+
+
+function renderCountry(countryAll) {
+    countryAll.forEach(country => {
+        const li = document.createElement('li')
+        const a = document.createElement('a')
+        li.classList.add('salom')
+        a.classList.add('js_year')
+        a.textContent = country
+        a.dataset.country = country
+
+        a.addEventListener('click', () => {
+            // movie_ul.innerHTML = null
+            const filteredCountry = movies.filter(movie => movie.country === country)
+            renderList(filteredCountry)
+        })
+
+        li.append(a)
+        countryHtml.prepend(li)
+
+    })
+}
+
+
 
 function renderList(movies) {
     movie_ul.innerHTML = null;
@@ -213,11 +244,17 @@ function renderList(movies) {
     });
 }
 
+
+
+
 function sliceMovies(page) {
+    console.log(page);
     const start = page * 8;
     const end = start + 8;
     return movies.slice(start, end);
 }
+
+
 
 function renderPaginationButtons() {
     paginations.innerHTML = '';
@@ -227,19 +264,169 @@ function renderPaginationButtons() {
         const button = document.createElement('button');
         button.textContent = i + 1;
         button.classList.add('page-button');
+        button.classList.add('paginationButton')
         button.dataset.page = i;
-        button.addEventListener('click', () => {
-            const page = parseInt(button.dataset.page);
-            const moviesForPage = sliceMovies(page);
-            renderList(moviesForPage);
-        });
+
+
         paginations.append(button);
+
+        paginations.addEventListener('click', (event) => {
+            console.log(event.target);
+            if (event.target.tagName === 'BUTTON') {
+                const page = parseInt(event.target.dataset.page);
+                const moviesForPage = sliceMovies(page);
+                renderList(moviesForPage);
+            }
+        });
     }
 }
 
 
 
+////////////---------------------------------------/////////////
 
+
+
+
+///////================================------------===========/////////
+
+
+
+
+
+
+
+// const movie_ul = document.getElementById('ul');
+// const navbar_years = document.getElementById('navbar_years');
+// const paginations = document.getElementById('pagination');
+// const kinoTur = document.getElementById("kinoTur");
+// const movie_year = [];
+// const turlar = [];
+
+// // Populate movie_year and turlar arrays
+// movies.forEach(movie => {
+//     movie_year.push(movie.year);
+//     turlar.push(movie.turi);
+// });
+
+// const sorttur = [...new Set(turlar)].sort();
+// const sortMovie = [...new Set(movie_year)].sort((a, b) => b - a);
+
+// renderYear(sortMovie);
+// renderTypes(sorttur);
+// renderPaginationButtons();
+// renderList(sliceMovies(0));
+
+// function renderYear(years) {
+//     years.forEach(year => {
+//         const li = document.createElement('li');
+//         const a = document.createElement('a');
+//         a.setAttribute('href', '#');
+//         a.classList.add('js_year');
+//         a.textContent = year;
+//         a.dataset.year = year;
+//         li.setAttribute('class', 'salom salom1');
+//         a.addEventListener('click', () => {
+//             movie_ul.innerHTML = null;
+//             const filteredMovies = movies.filter(movie => movie.year === year);
+//             renderList(filteredMovies);
+//         });
+
+//         li.append(a);
+//         navbar_years.prepend(li);
+//     });
+// }
+
+// function renderTypes(types) {
+//     types.forEach(type => {
+//         const li = document.createElement('li');
+//         const a = document.createElement('a');
+//         a.setAttribute('href', '#');
+//         a.classList.add('js_type');
+//         a.textContent = type;
+//         a.dataset.type = type;
+//         li.setAttribute('class', 'salom salom1');
+//         a.addEventListener('click', () => {
+//             movie_ul.innerHTML = null;
+//             const filteredMovies = movies.filter(movie => movie.turi === type);
+//             renderList(filteredMovies);
+//         });
+
+//         li.append(a);
+//         kinoTur.append(li);
+//     });
+// }
+
+// kinoTur.addEventListener('click', (event) => {
+//     if (event.target.tagName === 'A') {
+//         movie_ul.innerHTML = null;
+//         const filteredMovies = movies.filter(movie => movie.turi === event.target.dataset.type);
+//         renderList(filteredMovies);
+//     }
+// });
+
+// function renderList(movies) {
+//     movie_ul.innerHTML = null;
+//     movies.forEach(movie => {
+//         const li = document.createElement('li');
+//         const img = document.createElement('img');
+//         const title = document.createElement('h3');
+//         const desc = document.createElement('p');
+
+//         img.src = movie.img;
+//         title.textContent = movie.title;
+//         desc.textContent = movie.desc;
+//         li.append(img, title, desc);
+
+//         li.classList.add('li');
+//         img.classList.add('imgCover');
+//         movie_ul.prepend(li);
+//     });
+// }
+
+// function sliceMovies(page) {
+//     const start = page * 8;
+//     const end = start + 8;
+//     return movies.slice(start, end);
+// }
+
+// function renderPaginationButtons() {
+//     paginations.innerHTML = '';
+//     const totalPages = Math.ceil(movies.length / 8);
+
+//     for (let i = 0; i < totalPages; i++) {
+//         const button = document.createElement('button');
+//         button.textContent = i + 1;
+//         button.classList.add('page-button');
+//         button.dataset.page = i;
+
+//         paginations.append(button);
+//     }
+
+//     paginations.addEventListener('click', (event) => {
+//         if (event.target.tagName === 'BUTTON') {
+//             const page = parseInt(event.target.dataset.page);
+//             const moviesForPage = sliceMovies(page);
+//             renderList(moviesForPage);
+//         }
+//     });
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////---------------------------------------/////////////
 
 
 
@@ -320,10 +507,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-navbar_years.addEventListener("click", (evt) => {
-    if (evt.target.classList.contains("js_year")) {
-        console.log(evt.target.dataset.year);
+navbar_years.addEventListener("click", (e) => {
+    if (e.target.classList.contains('js_year')) {
+        console.log(e.target.dataset.year);
     }
-
-    evt.stopPropagation()
+    e.stopPropagation()
 })

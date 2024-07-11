@@ -33,11 +33,11 @@
                             Kinolar
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Tarjima kinolar</a></li>
+                            <!-- <li><a class="dropdown-item" href="#">Tarjima kinolar</a></li>
                             <li><a class="dropdown-item" href="#">Premyera</a></li>
                             <li><a class="dropdown-item" href="#">Hind kinolari</a></li>
                             <li><a class="dropdown-item" href="#">Multfilm </a></li>
-                            <li><a class="dropdown-item" href="#">Kino yangiliklari</a></li>
+                            <li><a class="dropdown-item" href="#">Kino yangiliklari</a></li> -->
                         </ul>
                     </div>
                     <a href="">seriallar</a>
@@ -46,8 +46,8 @@
                             data-bs-toggle="dropdown" aria-expanded="false">
                             janr
                         </button>
-                        <ul class="dropdown-menu" id="dropdown">
-                            <li><a class="dropdown-item" href="#" id="jangari">Jangari</a></li>
+                        <ul class="dropdown-menu" id="kinoTur">
+                            <!-- <li><a class="dropdown-item" href="#" id="jangari">Jangari</a></li>
                             <li><a class="dropdown-item" href="#">Dramma</a></li>
                             <li><a class="dropdown-item" href="#">Komediya</a></li>
                             <li><a class="dropdown-item" href="#">Melodramma</a></li>
@@ -56,7 +56,7 @@
                             <li><a class="dropdown-item" href="#">Tarixiy</a></li>
                             <li><a class="dropdown-item" href="#">Klassika</a></li>
                             <li><a class="dropdown-item" href="#">Fantastika</a></li>
-                            <li><a class="dropdown-item" href="#">Hayotiy</a></li>
+                            <li><a class="dropdown-item" href="#">Hayotiy</a></li> -->
                         </ul>
                     </div>
                     <div class="dropdown ">
@@ -76,12 +76,7 @@
                             Mamlakat
                         </button>
                         <ul class="dropdown-menu" id="country">
-                            <li><a class="dropdown-item" href="#">Rossiya</a></li>
-                            <li><a class="dropdown-item" href="#">Aqsh</a></li>
-                            <li><a class="dropdown-item" href="#">Turkiya</a></li>
-                            <li><a class="dropdown-item" href="#">Xitoy </a></li>
-                            <li><a class="dropdown-item" href="#">Hindiston</a></li>
-                            <li><a class="dropdown-item" href="#">Avstraliya</a></li>
+
                         </ul>
                     </div>
                     <a href="">kino yangililari</a>
@@ -177,7 +172,10 @@
                 </li>
             </ul>
 
-            <input type="text" class="search_input" placeholder="Qidirish...">
+            <input type="text" class="search_input" placeholder="Qidirish..." id="searchinput">
+            <!-- <input type="text" id="searchinput" placeholder="Search for movies..."> -->
+            <p id="searchResult"></p>
+
         </div>
     </section>
 
@@ -373,7 +371,7 @@
 
     <section class="section4">
         <div class="container">
-            <div id="pagination">
+            <div class="paginationStyle" id="pagination">
 
             </div>
         </div>

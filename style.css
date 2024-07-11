@@ -27,8 +27,9 @@ header {
 }
 
 .salom {
-    padding: 20px 0;
+    padding: 2px 0;
 }
+
 .container {
     width: 100%;
     max-width: 1240px;
@@ -310,7 +311,6 @@ header {
 .yuqori_reyting {
     width: 277px;
     /* max-width: 277px; */
-    border: 1px solid green;
     margin-top: 20px;
     padding: 20px 10px;
     background-color: #24303d;
@@ -337,6 +337,7 @@ header {
     gap: 5px;
     /* border: 1px solid red; */
 }
+
 .reyting-li img {
     width: 70px;
     height: 95px;
@@ -356,7 +357,20 @@ header {
     /* border: 1px solid red; */
 }
 
-.js_year{
+.js_year {
     padding: 5px 10px;
     /* border: 1px solid red; */
+}
+
+.paginationStyle {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.paginationButton {
+    width: 100%;
+    background-color: #103456;
+    color: #fff;
 }
