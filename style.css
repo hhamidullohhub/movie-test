@@ -363,7 +363,8 @@ header {
 }
 
 .paginationStyle {
-    width: 75%;
+    width: 50%;
+    margin-left: 200px;
     display: flex;
     justify-content: space-between;
     gap: 5px;
